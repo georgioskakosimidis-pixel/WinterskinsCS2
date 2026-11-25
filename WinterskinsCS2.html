@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winterskins</title>
+    <link rel="stylesheet" href="css/WinterskinsCS2.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">❄ Winterskins</div>
+    <nav>
+        <a href="WinterskinsCS2.html">Markt</a>
+        <a href="inventory.html">Inventory</a>
+        <a href="support.html">Support</a>
+    </nav>
+	<button class="login-btn" id="loginBtn">Login</button>
+</header>
+
+<section class="hero">
+    <h1>Buy CS2 Skins</h1>
+    <p>Sure | Fast | Safe</p>
+</section>
+
+<section class="filters">
+    <input id="search" type="text" placeholder="Skin suchen...">
+    
+    <select id="weaponFilter">
+        <option value="all">All</option>
+        <option value="AK-47">AK-47</option>
+        <option value="M4A1-S">M4A1-S</option>
+        <option value="AWP">AWP</option>
+		<option value="M4A4">M4A4</option>
+		<option value="Knife">Knives</option>
+		<option value="Karambit">Karambit</option>
+		<option value="Butterfly">Butterfly Knife</option>
+		<option value="Gloves">Gloves</option>
+		<option value="Sport Gloves">Sport Gloves</option>
+		<option value="Specialist Gloves">Specialist Gloves</option>
+    </select>
+
+    <select id="sortPrice">
+        <option value="default">Default</option>
+        <option value="desc">Preis ↑</option>
+        <option value="asc">Preis ↓</option>
+    </select>
+	 <input id="minPrice" type="number" placeholder="Min €">
+    <input id="maxPrice" type="number" placeholder="Max €">
+</section>
+
+<section class="skins">
+    <div class="card" data-weapon="Gloves" data-subtype="Specialist Gloves" data-price="463.47">
+	    <span class="badge">-20%</span>
+        <img src="images/Mogul.png" alt="">
+        <h3>Specialist Gloves | Mogul</h3>
+        <p class="float">Float: 0.03</p>
+        <p class="price">463.47€</p>
+        <button>Buy</button>
+    </div>
+
+    <div class="card" data-weapon="AWP" data-price="8959.99">
+        <img src="images/AWP Gungnir.jpg" alt="">
+        <h3>AWP | Gungnir</h3>
+        <p class="float">Float: 0.28</p>
+        <p class="price">8959.99€</p>
+        <button>Buy</button>
+    </div>
+
+    <div class="card" data-weapon="M4A1-S" data-price="720.00">
+        <span class="badge cold">cold</span>
+        <img src="images/M4A1-S Icarus Fell.jpg" alt="">
+        <h3>M4A1-S | Icarus Fell</h3>
+        <p class="float">Float: 0.05</p>
+        <p class="price">720.00€</p>
+        <button>Buy</button>
+    </div>
+
+    <div class="card" data-weapon="AK-47" data-price="99999.99">
+        <img src="images/Blue gem Ak47.jpg" alt="">
+        <h3>AK-47 | Case Hardened</h3>
+        <p class="float">Pattern: 661</p>
+        <p class="price">99999.99€</p>
+        <button>Buy</button>
+    </div>
+
+    <div class="card" data-weapon="Gloves" data-subtype="Sport Gloves" data-price="11100.29">
+        <img src="images/Conductor.png" alt="">
+        <h3>Sport Gloves | Superconductor</h3>
+        <p class="float">Float: 0.02</p>
+        <p class="price">11100.29€</p>
+        <button>Buy</button>
+    </div>
+	
+	<div class="card" data-weapon="AWP" data-price="1500.00">
+        <img src="images/AWP Medusa.jfif" alt="">
+        <h3>AWP | Medusa</h3>
+        <p class="float">Float: 0.18</p>
+        <p class="price">1500.00€</p>
+        <button>Buy</button>
+    </div>
+	
+	<div class="card" data-weapon="AK-47" data-price="158.69">
+        <img src="images/AK-47 Inheritance.jpg" alt="">
+        <h3>AK-47 | Inheritance</h3>
+        <p class="float">Float: 0.03</p>
+        <p class="price">158.69€</p>
+        <button>Buy</button>
+    </div>
+	
+	<div class="card" data-weapon="M4A4" data-price="1999.99">
+        <img src="images/m4a4 poseydon.jpg" alt="">
+        <h3>M4A4 | Poseydon</h3>
+        <p class="float">Float: 0.02</p>
+        <p class="price">1999.99€</p>
+        <button>Buy</button>
+    </div>
+	
+		<div class="card" data-weapon="Knife" data-subtype="Butterfly" data-price="6800.00">
+        <img src="images/Butterfly Sapphire.png" alt="">
+        <h3>Butterfly Knife| Doppler Sapphire </h3>
+        <p class="float">Float: 0.007</p>
+        <p class="price">6800.00€</p>
+        <button>Buy</button>
+    </div>
+	
+	<div class="card" data-weapon="Knife" data-subtype="Karambit" data-price="586.70">
+        <img src="images/Karambit Bright Water.png" alt="">
+        <h3>Karambit | Bright Water</h3>
+        <p class="float">Float: 0.02</p>
+        <p class="price">586.70€</p>
+        <button>Buy</button>
+    </div>
+	
+</section>
+
+<footer>
+    <p>© 2026 Winterskins</p>
+</footer>
+
+<script>
+const searchInput = document.getElementById("search");
+const weaponFilter = document.getElementById("weaponFilter");
+const sortPrice = document.getElementById("sortPrice");
+
+const minPriceInput = document.getElementById("minPrice");
+const maxPriceInput = document.getElementById("maxPrice");
+
+const container = document.querySelector(".skins");
+const cards = Array.from(document.querySelectorAll(".card"));
+const originalOrder = [...cards]; // сохраняем порядок
+
+function filterSkins() {
+    const searchValue = searchInput.value.toLowerCase();
+    const selectedWeapon = weaponFilter.value;
+
+    const minPrice = parseFloat(minPriceInput.value) || 0;
+    const maxPrice = parseFloat(maxPriceInput.value) || Infinity;
+
+    cards.forEach(card => {
+        const name = card.querySelector("h3").textContent.toLowerCase();
+		const weapon = card.getAttribute("data-weapon");
+		const subtype = card.getAttribute("data-subtype");
+        const price = parseFloat(card.getAttribute("data-price"));
+
+        let show = true;
+
+        if (!name.includes(searchValue)) show = false;
+		
+        if (selectedWeapon !== "all") {
+			if (weapon !== selectedWeapon && subtype !== selectedWeapon) {
+                show = false;
+            }
+        }
+        if (price < minPrice || price > maxPrice) show = false;
+
+        card.style.display = show ? "block" : "none";
+    });
+}
+
+function sortSkins() {
+    const sortValue = sortPrice.value;
+
+    let sortedCards;
+
+    if (sortValue === "default") {
+        sortedCards = originalOrder;
+    } else {
+        sortedCards = [...cards].sort((a, b) => {
+            const priceA = parseFloat(a.getAttribute("data-price"));
+            const priceB = parseFloat(b.getAttribute("data-price"));
+
+            return sortValue === "asc"
+                ? priceA - priceB
+                : priceB - priceA;
+        });
+    }
+
+    sortedCards.forEach(card => container.appendChild(card));
+}
+
+searchInput.addEventListener("input", filterSkins);
+weaponFilter.addEventListener("change", filterSkins);
+sortPrice.addEventListener("change", sortSkins);
+
+minPriceInput.addEventListener("input", filterSkins);
+maxPriceInput.addEventListener("input", filterSkins);
+</script>
+
+<script>
+const loginBtn = document.getElementById("loginBtn");
+
+function updateLoginState() {
+    const user = localStorage.getItem("loggedInUser");
+    loginBtn.textContent = user ? user + " (Logout)" : "Login";
+}
+
+updateLoginState();
+
+loginBtn.addEventListener("click", () => {
+
+    const currentUser = localStorage.getItem("loggedInUser");
+
+    if (currentUser) {
+        localStorage.removeItem("loggedInUser");
+        localStorage.removeItem("token");
+        updateLoginState();
+        return;
+    }
+
+    const action = prompt("Login oder Registrieren? (login/register)");
+
+    // REGISTER
+    if (action === "register") {
+
+        const username = prompt("Username:");
+        const password = prompt("Passwort:");
+
+        if (!username || !password) return;
+
+        fetch("http://localhost:3000/register", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                username,
+                password
+            })
+        })
+        .then(res => res.json())
+        .then(data => {
+            alert(data.message);
+        })
+        .catch(err => {
+            console.error(err);
+        });
+
+    }
+
+    // LOGIN
+    if (action === "login") {
+
+        const username = prompt("Username:");
+        const password = prompt("Passwort:");
+
+        if (!username || !password) return;
+
+        fetch("http://localhost:3000/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                username,
+                password
+            })
+        })
+        .then(res => res.json())
+        .then(data => {
+
+            if (data.token) {
+
+                localStorage.setItem("token", data.token);
+                localStorage.setItem("loggedInUser", username);
+
+                updateLoginState();
+
+                alert("Login erfolgreich!");
+            } else {
+                alert(data.message);
+            }
+
+        })
+        .catch(err => {
+            console.error(err);
+        });
+
+    }
+
+});
+</script>
+
+<script>
+const buyButtons = document.querySelectorAll(".card button");
+
+buyButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        const user = localStorage.getItem("loggedInUser");
+
+        // ❌ Nicht eingeloggt
+        if (!user) {
+            alert("You must be logged in!");
+            return;
+        }
+
+        const card = button.parentElement;
+
+        const item = {
+            name: card.querySelector("h3").textContent,
+            float: card.querySelector(".float").textContent,
+            img: card.querySelector("img").getAttribute("src")
+        };
+
+        let inventory = JSON.parse(localStorage.getItem("inventory")) || [];
+
+        inventory.push(item);
+
+        localStorage.setItem("inventory", JSON.stringify(inventory));
+
+        alert("Gekauft und ins Inventar gelegt!");
+    });
+});
+</script>
+
+</body>
+</html>
